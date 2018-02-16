@@ -108,6 +108,15 @@ class RunSinglePhpunitTestCommand(PhpunitTestCommand):
 
         self.run_in_terminal('cd ' + phpunit_config_path + self.get_cmd_connector() + phpunit_bin + ' ' + file_name + " --filter '/::" + current_function + "$/'")
 
+class WatchSinglePhpunitTestCommand(PhpunitTestCommand):
+
+    def run(self, *args, **kwargs):
+        file_name, phpunit_config_path, phpunit_bin, active_view, directory = self.get_paths()
+
+        current_function = self.get_current_function(active_view)
+
+        self.run_in_terminal('watch ' + phpunit_bin + ' ' + file_name + " --filter '/::" + current_function + "$/'")
+
 class RunLastPhpunitTestCommand(PhpunitTestCommand):
 
     def run(self, *args, **kwargs):
