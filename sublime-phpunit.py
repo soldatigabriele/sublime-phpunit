@@ -115,7 +115,8 @@ class WatchSinglePhpunitTestCommand(PhpunitTestCommand):
 
         current_function = self.get_current_function(active_view)
 
-        self.run_in_terminal('watch ' + phpunit_bin + ' ' + file_name + " --filter '/::" + current_function + "$/'")
+        # self.run_in_terminal('cd ' + phpunit_config_path + self.get_cmd_connector() + 'watch ' + phpunit_bin + ' ' + file_name + "  --filter '/::" + current_function + "$/'")
+        self.run_in_terminal('while true; do clear; date;echo; cd ' + phpunit_config_path + self.get_cmd_connector() + phpunit_bin + ' ' + file_name + "  --filter '/::" + current_function + "$/'; sleep 1; done")
 
 class RunLastPhpunitTestCommand(PhpunitTestCommand):
 
