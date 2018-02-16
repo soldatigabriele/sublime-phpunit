@@ -32,6 +32,7 @@ Here are some example keybindings:
 [
     { "keys": ["alt+t"], "command": "run_single_phpunit_test"},
     { "keys": ["control+alt+t"], "command": "watch_single_phpunit_test"},
+    { "keys": ["control+alt+c"], "command": "color_watch_single_phpunit_test"},
     { "keys": ["alt+f"], "command": "run_phpunit_test"},
     { "keys": ["alt+a"], "command": "run_all_phpunit_tests"},
 ]
